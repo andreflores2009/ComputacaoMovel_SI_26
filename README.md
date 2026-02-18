@@ -34,8 +34,6 @@ Nesta disciplina, adotamos uma abordagem evolutiva. Começamos com a base mais r
 ## 📂 Organização das Aulas
 Os materiais estão organizados por pastas correspondentes a cada aula. Dentro de cada pasta, você encontrará os slides, códigos de exemplo e orientações práticas.
 
-* [📂 aula01/](./aula01/) - **Introdução ao Android**: Histórico, Gênese, Governança e Instalação de Ferramentas (Android Studio/JDK).
-* *(As próximas aulas serão adicionadas conforme o cronograma)*
 
 ---
 
