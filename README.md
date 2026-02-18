@@ -1,57 +1,54 @@
 # Computação Móvel - Sistemas de Informação (UFN) 📱
 
-Bem-vindo à disciplina de **Computação Móvel** da Universidade Franciscana (UFN). Este repositório centraliza os materiais, exemplos de código e o planejamento da nossa jornada pelo desenvolvimento de aplicações para dispositivos móveis.
+Repositório central de materiais e projetos da disciplina de Computação Móvel. Aqui, aplicamos os conceitos do **Plano de Ensino 2026/1** da Universidade Franciscana.
 
-## 🎓 Sobre a Disciplina
-A disciplina foca no desenvolvimento de software voltado para hardware portátil, considerando restrições de bateria, memória e conectividade, além de explorar as principais plataformas do mercado.
+## 🚀 Proposta Tecnológica
+Nesta disciplina, adotamos uma abordagem evolutiva. Começamos com a base mais robusta e nativa para entender os fundamentos do hardware e do sistema operacional, e avançamos para os frameworks de produtividade do mercado:
 
-### 🚀 Tecnologias que utilizaremos:
-Nossa abordagem é evolutiva, permitindo que o aluno compreenda desde a base nativa até os frameworks modernos de mercado:
-
-1.  **Android Nativo (Java):** Foco no entendimento profundo do SDK Android, Ciclo de Vida (Lifecycle) e Persistência Local (SQLite).
-2.  **Flutter (Dart):** Introdução ao desenvolvimento multiplataforma com foco em alta performance e interfaces declarativas.
-3.  **React Native (JS/TS):** Desenvolvimento híbrido utilizando ecossistema web e componentes nativos.
+1.  **Android Nativo (Java):** O ponto de partida para dominar o SDK, Ciclo de Vida e SQLite.
+2.  **Flutter (Dart):** Desenvolvimento multiplataforma com foco em UI declarativa.
+3.  **React Native (JS/TS):** Ecossistema híbrido e integração com componentes nativos.
 
 ---
 
-## 📅 Plano de Ensino (Unidades)
+## 📅 Estrutura do Plano de Ensino
 
 ### Unidade 1: Introdução às Aplicações Móveis
-* **Subunidades:** Evolução histórica, Hardware vs. Software, Plataformas e Segurança/Privacidade.
-* **Objetivo:** Compreender o ecossistema e configurar os ambientes de desenvolvimento.
+* **Subunidades:** Evolução histórica (Hardware/Software), Plataformas de Desenvolvimento, Segurança e Privacidade.
+* **Aulas:** `aula01` até `aula10`.
 
 ### Unidade 2: Programação de Aplicativos Móveis
-* **Subunidades:** Projetos mobile, Linguagens (Java, Dart, JS) e Design de Interface (UI/UX).
-* **Objetivo:** Construir interfaces funcionais e gerenciar a lógica da aplicação.
+* **Subunidades:** Projetos Mobile, Linguagens de Programação (Java, Dart, JS), Design de Interface (UI/UX).
+* **Aulas:** `aula11` até `aula20`.
 
-### Unidade 3: Persistência de Dados
-* **Subunidades:** Manipulação de arquivos, Banco de Dados Local (SQLite) e Sincronização.
-* **Objetivo:** Garantir que os dados do usuário sejam salvos e recuperados de forma eficiente.
+### Unidade 3: Persistência de Dados em Aplicações Móveis
+* **Subunidades:** Manipulação de arquivos, Banco de dados local (SQLite) e remoto, Sincronização de dados.
+* **Aulas:** `aula21` até `aula30`.
 
 ### Unidade 4: APIs e Frameworks
-* **Subunidades:** Consumo de APIs Web (JSON/REST), Redes Sociais e Integração com Back-end.
-* **Objetivo:** Conectar o aplicativo ao mundo externo e serviços em nuvem.
+* **Subunidades:** APIs de requisições Web, APIs de serviços (Busca/Redes Sociais/Storage), Integração com Back-end e Autenticação.
+* **Aulas:** `aula31` até o final do semestre.
 
 ---
 
-## 🛠️ Pré-requisitos
-Para acompanhar as aulas práticas, certifique-se de ter instalado:
-* [Android Studio](https://developer.android.com/studio) (Versão atualizada)
-* [JDK 21](https://www.oracle.com/java/technologies/downloads/)
-* [Flutter SDK](https://docs.flutter.dev/get-started/install)
-* [Node.js](https://nodejs.org/) (para React Native)
+## 📂 Organização das Aulas
+Os materiais estão organizados por pastas correspondentes a cada aula. Dentro de cada pasta, você encontrará os slides, códigos de exemplo e orientações práticas.
+
+* [📂 aula01/](./aula01/) - **Introdução ao Android**: Histórico, Gênese, Governança e Instalação de Ferramentas (Android Studio/JDK).
+* *(As próximas aulas serão adicionadas conforme o cronograma)*
 
 ---
 
-## 📂 Estrutura do Repositório
-* `/Exemplos-Android`: Projetos desenvolvidos no Android Studio (Java).
-* `/Exemplos-Flutter`: Projetos e Widgets desenvolvidos com Dart.
-* `/Exemplos-ReactNative`: Aplicações desenvolvidas com Expo/React Native.
-* `/Material-Teorico`: Slides das aulas e links úteis.
+## 🛠️ Ferramentas Necessárias (Setup)
+* **IDE:** Android Studio (Ladybug ou superior)
+* **JDK:** Java Development Kit v21 (LTS)
+* **Linguagens:** Java, Dart e JavaScript/TypeScript.
+* **Emulação:** Android Virtual Device (AVD) API 35+ ou Dispositivo Físico.
 
 ---
 
-## 🏛️ Instituição
+## 🏛️ Instituição e Contato
 **Universidade Franciscana (UFN)** **Curso:** Sistemas de Informação  
 **Professor:** André Flores dos Santos  
-**Ano:** 2026 / Santa Maria - RS
+**Local:** Santa Maria - RS  
+**Ano:** 2026
