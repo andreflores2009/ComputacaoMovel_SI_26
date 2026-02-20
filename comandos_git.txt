@@ -1,0 +1,15 @@
+# Inicia o git na sua pasta
+git init
+
+# Conecta ao seu repositório
+git remote add origin https://github.com/andreflores2009/ComputacaoMovel_SI_26.git
+
+# O SEGREDO: Puxa só a estrutura básica do que está lá no site para não dar erro
+git pull origin main --rebase
+
+# Adiciona seus arquivos da Aula02
+git add .
+git commit -m "Upload Aula 02 - CRUD"
+
+# Envia tudo
+git push origin main
