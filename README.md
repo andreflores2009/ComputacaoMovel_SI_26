@@ -1,4 +1,4 @@
-# Computação Móvel - Sistemas de Informação (UFN) 📱
+# Computação Móvel - Sistemas de Informação 📱
 
 Repositório central de materiais e projetos da disciplina de Computação Móvel. Aqui, aplicamos os conceitos do **Plano de Ensino 2026/1** da Universidade Franciscana.
 
