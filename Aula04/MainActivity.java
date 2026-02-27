@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //Retorna True se o telefone for válido e false se não
         if (!dao.validaTelefone(telefoneDigitado)) {
             Toast.makeText(this, "Telefone inválido! Use o formato correto: (XX) 9XXXX-XXXX", Toast.LENGTH_SHORT).show();
-            return;
+            return; //para por aqui e da a mensagem acima
         }
 
         // Criar objeto Aluno
