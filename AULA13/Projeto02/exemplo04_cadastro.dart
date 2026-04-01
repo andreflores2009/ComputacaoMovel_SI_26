@@ -27,7 +27,7 @@ class _CadastroClientePageState extends State<CadastroClientePage> {
       appBar: AppBar(
         title: const Text('Cadastro de Cliente'), // Título da AppBar
       ),
-      // SOLUÇÃO: SingleChildScrollView permite que a tela role quando o teclado sobe
+      // SingleChildScrollView permite que a tela role quando o teclado sobe
       body: SingleChildScrollView( 
         child: Padding(
           padding: const EdgeInsets.all(16.0), // Espaçamento interno ao redor do formulário
