@@ -1,49 +1,73 @@
-// Importa o pacote do Flutter para construir a interface
+// Importa o pacote do Flutter para construir a interface (botões, listas, cores)
 import 'package:flutter/material.dart';
 
-// Importa a classe do banco de dados
+// Importa a classe do banco de dados para que possamos usar o método 'listarClientes'
 import '../database/app_database.dart';
 
-// Tela sem estado que exibe a lista de clientes cadastrados
+// Esta é uma StatelessWidget porque ela apenas exibe dados que vêm do banco, 
+// não gerencia variáveis internas que mudam a cada segundo.
 class ListarPage extends StatelessWidget {
-  // Cria uma instância do banco de dados Drift
+  // Cria uma instância do banco de dados Drift para acessar o SQLite
   final db = AppDatabase();
 
-  // Método que constrói a interface gráfica da tela
+  // O método build é o "desenhista" da tela
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Barra superior da tela com título
+      // Barra superior com o título da página
       appBar: AppBar(title: Text('Lista de Clientes')),
 
-      // Corpo da tela com carregamento assíncrono dos dados
-      body: FutureBuilder(
-        future: db.listarClientes(), // Chama o método para buscar os clientes do banco
+      // O FutureBuilder é um widget especial que "espera" uma resposta do banco de dados.
+      // Como o banco de dados é lento comparado ao processador, precisamos dele para não travar o app.
+      body: FutureBuilder<List<Cliente>>(
+        // 'future' é a tarefa que ele deve esperar terminar (neste caso, buscar a lista)
+        future: db.listarClientes(), 
 
-        // Constrói os widgets de acordo com o estado do carregamento
+        // O 'builder' é chamado várias vezes: quando começa a carregar e quando termina.
         builder: (context, snapshot) {
-          // Enquanto os dados ainda estão sendo carregados
-          if (!snapshot.hasData) {
-            return Center(child: CircularProgressIndicator()); // Mostra o círculo de carregamento
+          
+          // 1º ESTADO: Verificação de Erro (Boa prática para mostrar aos alunos)
+          if (snapshot.hasError) {
+            return Center(child: Text('Erro ao carregar dados!'));
           }
 
-          // Quando os dados forem carregados com sucesso
-          final clientes = snapshot.data!; // Lista de clientes retornada
+          // 2º ESTADO: Carregando
+          // Se snapshot não tem dados (hasData) ainda, significa que o banco está trabalhando.
+          if (!snapshot.hasData) {
+            return Center(child: CircularProgressIndicator()); // Mostra o círculo girando
+          }
 
-          // Cria uma lista visual com os clientes
+          // 3º ESTADO: Dados Carregados
+          // 'snapshot.data!' -> Usamos o '!' porque o 'if' acima já garantiu que o dado chegou.
+          // O '!' diz ao Dart: "Pode confiar, a lista não está nula agora".
+          final clientes = snapshot.data!; 
+
+          // Verificação extra: E se o banco estiver vazio? (Importante para o aluno não ver uma tela branca)
+          if (clientes.isEmpty) {
+            return Center(child: Text('Nenhum cliente cadastrado.'));
+          }
+
+          // 4º ESTADO: Construção da Lista Visual
+          // O ListView.builder é eficiente porque só desenha o que cabe na tela do celular.
           return ListView.builder(
-            itemCount: clientes.length, // Quantidade de itens na lista
+            itemCount: clientes.length, // Define quantos itens a lista terá
 
-            // Função que monta cada item da lista
+            // Esta função roda para cada item da lista (index 0, index 1, index 2...)
             itemBuilder: (context, index) {
-              final cliente = clientes[index]; // Cliente atual da lista
+              final cliente = clientes[index]; // Pega o cliente específico daquela posição
 
-              // Widget que representa visualmente um cliente na lista
+              // O ListTile é um componente pronto do Flutter com título, subtítulo e ícone
               return ListTile(
-                title: Text(cliente.nome), // Exibe o nome como título
-                subtitle: Text(
-                  'CPF: ${cliente.cpf} - Tel: ${cliente.telefone}', // Exibe CPF e telefone
+                // Ícone decorativo à esquerda (leading)
+                leading: CircleAvatar(
+                  child: Text(cliente.nome[0].toUpperCase()), // Pega a primeira letra do nome
                 ),
+                title: Text(cliente.nome), // Nome em destaque
+                subtitle: Text(
+                  'CPF: ${cliente.cpf} \nTel: ${cliente.telefone}', // \n quebra a linha
+                ),
+                // Deixa o item da lista um pouco mais alto para caber o telefone
+                isThreeLine: true, 
               );
             },
           );
